@@ -9,36 +9,57 @@ import SwiftData
 import Foundation
 import SwiftSoup
 import os
+import SwiftUICore
 
 @MainActor
 class MainViewModel: NSObject, ObservableObject {
     struct Recipe: Codable, Hashable {
-        var UUID: UUID
-        var type: String
-        var name: String
-        var photoLarge: URL
-        var photoSmall: URL
-        var sourceURL: URL
-        var ytURL: URL
+        var UUID: UUID?
+        var cuisine: String?
+        var name: String?
+        var photoLarge: URL?
+        var photoSmall: URL?
+        var sourceURL: URL?
+        var ytURL: URL?
         
-        init(UUID: UUID, type: String, name: String, photoLarge: URL, photoSmall: URL, sourceURL: URL, ytURL: URL) {
-            self.UUID = UUID
-            self.type = type
-            self.name = name
-            self.photoLarge = photoLarge
-            self.photoSmall = photoSmall
-            self.sourceURL = sourceURL
-            self.ytURL = ytURL
+        private enum CodingKeys: String, CodingKey {
+            case name = "name"
+            case cuisine = "cuisine"
+            case photoLarge = "photo_url_large"
+            case photoSmall = "photo_url_small"
+            case sourceURL = "source_url"
+            case UUID = "uuid"
+            case ytURL = "youtube_url"
         }
     }
     
-    var recipeList: [Recipe]
-    
-    override init() {
-        recipeList = []
+    struct RecipeList: Codable, Hashable {
+        var recipes: [Recipe]
+        
+        init(recipeList: [Recipe]) {
+            self.recipes = recipeList
+        }
+        
+        init() {
+            self.recipes = []
+        }
+        
+        private enum CodingKeys: String, CodingKey {
+            case recipes = "recipes"
+        }
     }
     
-    func retrieveData(/*inputURL: String*/) async throws /*-> [Recipe]*/ {
+    var recipeList: RecipeList
+    
+    override init() {
+        recipeList = RecipeList()
+    }
+    
+    func getList() -> [Recipe] {
+        return recipeList.recipes
+    }
+    
+    func getNetworkAssets() async -> Data {
         let url = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
         var data: Data = Data()
         do {
@@ -46,18 +67,22 @@ class MainViewModel: NSObject, ObservableObject {
         } catch {
             Logger().error("Failed to complete URLSession")
         }
-        let decoder = JSONDecoder()
-        var recipeList: [Recipe] = []
+        return data
+    }
+    
+    func getData() async throws {
+        async let data = getNetworkAssets()
+        var recipeList: RecipeList = RecipeList()
         do {
-            recipeList = try decoder.decode([Recipe].self, from: data)
+            recipeList = try decodeData(data: await data)
         } catch {
-            Logger().error("Failed to decode URLSession data")
+            Logger().error("Failed to decode JSON data from network source")
         }
         self.recipeList = recipeList
     }
     
-//    func getRecipeList() {
-//        let url: String = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json"
-//        //retrieveData(inputURL: url)
-//    }
+    func decodeData(data: Data) throws -> RecipeList {
+        return try JSONDecoder().decode(RecipeList.self, from: data)
+    }
+
 }
