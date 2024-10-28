@@ -1,0 +1,24 @@
+{
+  "originHash" : "0b79b4f9fb04a07733708d4325dcd2cfef32649539c964fa8eaff48135ff97f0",
+  "pins" : [
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "c0940e241945e6378c01fbd45fd3815579d47ef5",
+        "version" : "8.1.0"
+      }
+    },
+    {
+      "identity" : "swiftsoup",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scinfu/SwiftSoup",
+      "state" : {
+        "revision" : "3c2c7e1e72b8abd96eafbae80323c5c1e5317437",
+        "version" : "2.7.5"
+      }
+    }
+  ],
+  "version" : 3
+}
