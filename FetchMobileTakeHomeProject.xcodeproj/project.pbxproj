@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341D82252CD11768000C71AB /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 341D82242CD11768000C71AB /* SwiftSoup */; };
+		341D82272CD11768000C71AB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 341D82262CD11768000C71AB /* Kingfisher */; };
 		3486D4E02CCEF7EA00049B63 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3486D4DF2CCEF7EA00049B63 /* Kingfisher */; };
 		34C4DD5D2CCA30D200BB856B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4DD5C2CCA30D200BB856B /* SwiftSoup */; };
 /* End PBXBuildFile section */
@@ -35,10 +37,47 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		341D82222CD1174C000C71AB /* Exceptions for "FetchMobileTakeHomeProject" folder in "FetchMobileTakeHomeProjectUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ContentView.swift,
+				FetchMobileTakeHomeProjectApp.swift,
+				Models/Recipe.swift,
+				Utilities/Constants.swift,
+				Utilities/NetworkClient.swift,
+				ViewModel/MainViewModel.swift,
+				Views/RecipeView.swift,
+				Views/SpinnerView.swift,
+			);
+			target = 3421DD262CCA1C4C00A6598B /* FetchMobileTakeHomeProjectUITests */;
+		};
+		341D822B2CD1177F000C71AB /* Exceptions for "FetchMobileTakeHomeProjectTests" folder in "FetchMobileTakeHomeProjectUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CleanJsonData.json,
+				EmptyJsonData.json,
+				MalformedData.json,
+			);
+			target = 3421DD262CCA1C4C00A6598B /* FetchMobileTakeHomeProjectUITests */;
+		};
+		34F2D46A2CD0E8800008B8AB /* Exceptions for "FetchMobileTakeHomeProjectTests" folder in "FetchMobileTakeHomeProject" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CleanJsonData.json,
+			);
+			target = 3421DD0C2CCA1C4A00A6598B /* FetchMobileTakeHomeProject */;
+		};
+		34F2D46B2CD0E8800008B8AB /* Exceptions for "FetchMobileTakeHomeProjectTests" folder in "FetchMobileTakeHomeProjectTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CleanJsonData.json,
+			);
+			target = 3421DD1C2CCA1C4C00A6598B /* FetchMobileTakeHomeProjectTests */;
+		};
 		34FC615F2CCC55C3009CA5BA /* Exceptions for "FetchMobileTakeHomeProject" folder in "FetchMobileTakeHomeProjectTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				MainViewModel.swift,
+				ViewModel/MainViewModel.swift,
 			);
 			target = 3421DD1C2CCA1C4C00A6598B /* FetchMobileTakeHomeProjectTests */;
 		};
@@ -49,18 +88,19 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				34FC615F2CCC55C3009CA5BA /* Exceptions for "FetchMobileTakeHomeProject" folder in "FetchMobileTakeHomeProjectTests" target */,
+				341D82222CD1174C000C71AB /* Exceptions for "FetchMobileTakeHomeProject" folder in "FetchMobileTakeHomeProjectUITests" target */,
 			);
 			path = FetchMobileTakeHomeProject;
 			sourceTree = "<group>";
 		};
 		3421DD202CCA1C4C00A6598B /* FetchMobileTakeHomeProjectTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				34F2D46A2CD0E8800008B8AB /* Exceptions for "FetchMobileTakeHomeProjectTests" folder in "FetchMobileTakeHomeProject" target */,
+				34F2D46B2CD0E8800008B8AB /* Exceptions for "FetchMobileTakeHomeProjectTests" folder in "FetchMobileTakeHomeProjectTests" target */,
+				341D822B2CD1177F000C71AB /* Exceptions for "FetchMobileTakeHomeProjectTests" folder in "FetchMobileTakeHomeProjectUITests" target */,
+			);
 			path = FetchMobileTakeHomeProjectTests;
-			sourceTree = "<group>";
-		};
-		3421DD2A2CCA1C4C00A6598B /* FetchMobileTakeHomeProjectUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FetchMobileTakeHomeProjectUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -86,18 +126,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341D82272CD11768000C71AB /* Kingfisher in Frameworks */,
+				341D82252CD11768000C71AB /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341D82232CD11768000C71AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3421DD042CCA1C4A00A6598B = {
 			isa = PBXGroup;
 			children = (
 				3421DD0F2CCA1C4A00A6598B /* FetchMobileTakeHomeProject */,
 				3421DD202CCA1C4C00A6598B /* FetchMobileTakeHomeProjectTests */,
-				3421DD2A2CCA1C4C00A6598B /* FetchMobileTakeHomeProjectUITests */,
+				341D82232CD11768000C71AB /* Frameworks */,
 				3421DD0E2CCA1C4A00A6598B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,11 +224,10 @@
 			dependencies = (
 				3421DD292CCA1C4C00A6598B /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				3421DD2A2CCA1C4C00A6598B /* FetchMobileTakeHomeProjectUITests */,
-			);
 			name = FetchMobileTakeHomeProjectUITests;
 			packageProductDependencies = (
+				341D82242CD11768000C71AB /* SwiftSoup */,
+				341D82262CD11768000C71AB /* Kingfisher */,
 			);
 			productName = FetchMobileTakeHomeProjectUITests;
 			productReference = 3421DD272CCA1C4C00A6598B /* FetchMobileTakeHomeProjectUITests.xctest */;
@@ -430,7 +478,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +508,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,7 +530,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K43CY7TACG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = grietzercs.FetchMobileTakeHomeProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,7 +549,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K43CY7TACG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = grietzercs.FetchMobileTakeHomeProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -519,6 +567,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K43CY7TACG;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = grietzercs.FetchMobileTakeHomeProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -536,6 +585,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K43CY7TACG;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = grietzercs.FetchMobileTakeHomeProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -607,6 +657,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		341D82242CD11768000C71AB /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34C4DD5B2CCA30D200BB856B /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		341D82262CD11768000C71AB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3403999E2CCC6C9000AF2AC0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		3486D4DF2CCEF7EA00049B63 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3403999E2CCC6C9000AF2AC0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
