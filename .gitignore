@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -60,3 +61,10 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Custom ignore
+.DS_Store
+FetchMobileTakeHomeProject/.DS_Store
+.vs_code
+FetchMobileTakeHomeProject.xcodeproj/xcuserData/*
+FetchMobileTakeHomeProject.xcodeproj/project.xcworkspace/xcuserdata/*
