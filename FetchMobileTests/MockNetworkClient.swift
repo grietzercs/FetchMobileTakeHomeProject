@@ -9,7 +9,8 @@ import Foundation
 @testable import FetchMobileTakeHomeProject
 
 final class MockNetworkClient: NetworkClientProtocol, MockJsonData {
+    var fileName: String = ""
     func getNetworkAssets(url: URL) async throws -> RecipeList {
-        return loadJSON(fileName: "CleanJsonData.json")
+        return loadJSON(fileName: fileName)
     }
 }

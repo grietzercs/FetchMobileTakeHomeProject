@@ -12,20 +12,6 @@ import Kingfisher
 struct ContentView: View {
     @StateObject var mainViewModel = MainViewModel(networkClient: NetworkClient())
     @Environment(\.scenePhase) private var scenePhase
-//    @State var isDragging = false
-//    var drag: some Gesture {
-//        DragGesture()
-//            .onChanged({ _ in
-//                isDragging = true
-//            })
-//            .onEnded { _ in
-//                Task {
-//                    await mainViewModel.getData()
-//                    isDragging = false
-//                }
-//                
-//            }
-//    }
     @State var displayProgressView: Bool = false
     
     var body: some View {
@@ -49,6 +35,7 @@ struct ContentView: View {
                     } label: {
                         Label("Refresh List", systemImage: "arrow.clockwise")
                     }
+                    .accessibilityHint("Tap to refresh list")
                 }
                 .task {
                     await mainViewModel.getData()

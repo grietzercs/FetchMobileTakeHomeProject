@@ -1,6 +1,6 @@
 //
-//  MainViewModelTests.swift
-//  FetchMobileTakeHomeProjectTests
+//  FetchMobileTests.swift
+//  FetchMobileTests
 //
 //  Created by Colden on 10/29/24.
 //
@@ -8,25 +8,27 @@
 import XCTest
 @testable import FetchMobileTakeHomeProject
 
-final class MainViewModelTests: XCTestCase {
+final class FetchMobileTests: XCTestCase {
     
     var mainViewModel: MainViewModel!
-    
-    override func setUp() {
+
+    @MainActor
+    override func setUpWithError() throws {
         super.setUp()
         let mockNetworkClient = MockNetworkClient()
         mainViewModel = MainViewModel(networkClient: mockNetworkClient)
     }
-    
-    override func tearDown() {
+
+    override func tearDownWithError() throws {
         super.tearDown()
         mainViewModel = nil
     }
     
+    @MainActor
     func testRecipeListFetchSuccessfully() async {
-        //await mainViewModel.getData()
+        await mainViewModel.getData()
+        let recipeList = mainViewModel.recipeList.recipes
         
-        XCTAssertNotNil(mainViewModel.getList())
+        XCTAssertNotNil(recipeList)
     }
-
 }

@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case badURL(String = "")
-    case failedToGetData(String = "")
-}
-
 protocol NetworkClientProtocol {
     func getNetworkAssets(url: URL) async throws -> RecipeList
 }

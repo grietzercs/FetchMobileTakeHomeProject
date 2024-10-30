@@ -36,12 +36,15 @@ class MainViewModel: NSObject, ObservableObject {
         self.recipeList.recipes = []
         isListEmpty = true
     }
+    
+    @MainActor
     func getData() async {
         guard let url = URL(string: Constants.url) else {
             displayError()
             return
         }
         async let recipeList = networkClient.getNetworkAssets(url: url)
+        
         do {
             self.recipeList = try await recipeList
         } catch {
